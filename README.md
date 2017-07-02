@@ -19,6 +19,12 @@ This repo is a template to get started writing golang applications designed to r
 - `debug.sh` uses `debug.podspec.yml` to install your application/service into minikube.  Adjust as necessary to expose other ports.  Delve uses 2345 so leave that one alone.
 - The last line of `debug.sh` prints out the exposed endpoints on your container.  Currently `launch.json` is hardcoded to try to connect to the debugger at 192.168.99.100.  This will need to be adjusted if the service is exposed at a different IP.
 
+### A Better Approach
+
+See this project https://github.com/number101010/go-kubernetes-vscode-dev for a much better development experience.  The only thing that this project does better is actually run your code in the cluster which gives you access to the container file system.  See the caveats section in the `go-kubernetes-vscode-dev` readme.md for more details.
+
+Once I fix the issue where pods fail to terminate then this project will be a much slower but more complete solution.  The other project will become a much faster lightweight solution.
+
 ### Issues/Improvements
 
 - Print application output into vscode debug console
@@ -27,4 +33,3 @@ This repo is a template to get started writing golang applications designed to r
 - Use `kubectl port-forward` to expose 2345 on localhost
 - Add example usage of ./src directory
 - Cleanup/Replace pods better
-- Try to use telepresence.io?
